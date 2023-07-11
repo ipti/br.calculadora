@@ -28,7 +28,7 @@ const Layout = ({ children }: Props) => {
                 <Row>
                     <Button title={"Calculadora"} type="primary" />
                     <Padding />
-                    <Button title={"Calculadora"} type="secondary" />
+                    <Button title={"Autoavaliação"} type="secondary" />
                 </Row>
                 {children}
             </Container>

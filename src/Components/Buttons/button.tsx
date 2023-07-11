@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ButtonStyle } from "./style";
 
 
@@ -8,9 +8,23 @@ interface ButtonProps {
     type?: string
 }
 
+const isPrimary = (type: string | undefined) => {
+    if(type === "primary"){
+        return true
+    }
+    if(type === "secondary"){
+        return false
+    }
+    
+}
+
+
+
 const Button: React.FC <ButtonProps> = ({ title, onClick, type }) => {
+  
+
     return (
-        <ButtonStyle id={type} onClick={onClick}>
+        <ButtonStyle $primary={isPrimary(type)} onClick={onClick}>
             {title}
         </ButtonStyle>
     )
