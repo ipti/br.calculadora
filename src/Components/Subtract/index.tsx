@@ -1,10 +1,13 @@
-import { ContainerSubtract } from "./style";
+import { Background, Container, } from "./style";
+
 
 const Subtract = () => {
-    return(
-        <ContainerSubtract>
-        
-        </ContainerSubtract>
+    return (
+        <Container>
+            <Background>
+                {/* <h1>Preço na Prática</h1> */}
+            </Background>
+        </Container>
     )
 }
 

@@ -8,6 +8,4 @@ export const ButtonStyle = styled.button<{ $primary?: boolean; }>`
     padding: 10px;
     border-radius: 16px;
     background-color: ${props => props.$primary ? styles.colors.green : styles.colors.gray};
-
-
 `;

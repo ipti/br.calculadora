@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import style from "../Style/index"
+import style from "./index"
 
 import { createGlobalStyle } from 'styled-components';
 
@@ -8,7 +8,9 @@ const GlobalStyle = createGlobalStyle`
   html,
 body,
 #root {
-    height: 100vh;
+    margin: 0px;
+    height: 100%;
+    width: 100%;
     margin: 0;
     padding: 0;
 }
@@ -99,13 +101,18 @@ export const Row = styled.div`
 
 `;
 
-export const Padding = styled.div`
+interface PaddingAttributes {
+    padding?: string
+}
+
+export const Padding = styled.div<PaddingAttributes>`
     padding: ${props => props.padding || "5px"};
 `;
 
 export const Container = styled.div`
-    position: relative;
-    padding: 4%;
+    /* display: flex */
+    height: 100%;
+    width: 100%;
     font-size: ${style.typography.font.medium};
     font-family: ${style.typography.types.inter};
 `;

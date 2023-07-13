@@ -12,29 +12,31 @@ interface Props {
 
 const Layout = ({ children }: Props) => {
     return (
-        <>
-        <Stack>
-            <Background />
-            <VectorLeft>
-                <img alt="" src={vectorLeft} />
-            </VectorLeft>
-            <VectorTop>
-                <img alt="" src={vectorTop} />
-            </VectorTop>
-            <VectorRight>
-                <img alt="" src={vectorRight} />
-            </VectorRight>
-            <Container>
-                <Row>
-                    <Button title={"Calculadora"} type="primary" />
-                    <Padding />
-                    <Button title={"Autoavaliação"} type="secondary" />
-                </Row>
-                {children}
-            </Container>
-        </Stack>
+        <div style={{ width: "100%", height: "100%" }}>
+            <Stack>
+                <Background />
+                <VectorLeft>
+                    <img alt="" src={vectorLeft} />
+                </VectorLeft>
+                <VectorTop>
+                    <img alt="" src={vectorTop} />
+                </VectorTop>
+                <VectorRight>
+                    <img alt="" src={vectorRight} />
+                </VectorRight>
+                <Container>
+                    <Padding padding="32px">
+                        <Row>
+                            <Button title={"Calculadora"} type="primary" />
+                            <Padding />
+                            <Button title={"Autoavaliação"} type="secondary" />
+                        </Row>
+                        {children}
+                    </Padding>
+                </Container>
+            </Stack>
 
-        </>
+        </div>
     )
 }
 
