@@ -5,6 +5,7 @@ export const Background = styled.div`
     background-image: url(${background});
     height: 100%;
     width: 100%;
+    background-repeat: no-repeat;
     /* img{
         width: 20%;
     } */

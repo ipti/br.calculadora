@@ -10,11 +10,14 @@ export const Card = styled.div`
 `;
 
 export const Container = styled.div`
-    height: 50%;
   width: 30%;
   display: flex;
   flex-direction: row;
   justify-content: center;
+
+  @media only screen and (max-width: 700px) {
+       width: 80%;
+    }
 `;
 
 export const Visor = styled.div`
