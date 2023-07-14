@@ -9,11 +9,13 @@ interface PropsAttributes {
 
 const ButtonCalculator: React.FC<PropsAttributes> = ({ title, onClick, width }) => {
     return (
-        <Back width={width}>
-            <Buttons width={width} onClick={onClick}>
-                <h1>{title}</h1>
-            </Buttons>
-        </Back>
+        <div onClick={onClick}>
+            <Back width={width} >
+                <Buttons width={width}>
+                    <h1>{title}</h1>
+                </Buttons>
+            </Back>
+        </div>
     )
 }
 

@@ -12,7 +12,7 @@ interface Props {
 
 const Layout = ({ children }: Props) => {
     return (
-        <div style={{ width: "100%", height: "100%" }}>
+        <div style={{ width: "100%", height: "100%", position: "fixed" }}>
             <Stack>
                 <Background />
                 <VectorLeft>
@@ -27,11 +27,10 @@ const Layout = ({ children }: Props) => {
                 <Container>
                     <Padding padding="32px">
                         <Row>
-                            <Button title={"Calculadora"} type="primary" />
-                            <Padding />
+                            <Button title={"Calculadora"} type="primary" />                            
                             <Button title={"Autoavaliação"} type="secondary" />
                         </Row>
-                        {children}
+                           {children}
                     </Padding>
                 </Container>
             </Stack>

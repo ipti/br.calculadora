@@ -10,7 +10,7 @@ body,
 #root {
     margin: 0px;
     height: 100%;
-    width: 100%;
+    width: 100vw;
     margin: 0;
     padding: 0;
 }
@@ -85,6 +85,7 @@ export const Column = styled.div`
 export const Row = styled.div`
     display: flex;
     flex-direction: row;
+    gap: 20px; 
 
     #space-between{
         justify-content: space-between;
@@ -102,15 +103,18 @@ export const Row = styled.div`
 `;
 
 interface PaddingAttributes {
-    padding?: string
+    padding?: string,
+    width?: string
 }
 
 export const Padding = styled.div<PaddingAttributes>`
-    padding: ${props => props.padding || "5px"};
+    padding: ${props => props.padding || "4px"};
+    width: ${props => props.width || "100%"};
 `;
 
 export const Container = styled.div`
-    /* display: flex */
+display: flex;
+flex: 1;
     height: 100%;
     width: 100%;
     font-size: ${style.typography.font.medium};

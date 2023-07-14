@@ -5,15 +5,13 @@ import styles from "../../Style";
 export const Card = styled.div`
     background-color: #F8FAE4;
     border-radius: 46px;
-    height: auto;
     width: 80%;
+    height: auto;
+    padding: 32px;
 `;
 
 export const Container = styled.div`
   width: 30%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
 
   @media only screen and (max-width: 700px) {
        width: 80%;
@@ -23,8 +21,17 @@ export const Container = styled.div`
 export const Visor = styled.div`
     background-color: ${styles.colors.blueCalculator};
     height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
     width: 100%;
     border-radius: 46px;
+    h1{
+        
+        margin: auto;
+        margin-left: auto;
+        color: white;
+    }
 `;
 
 export const Back = styled.div`
@@ -34,8 +41,4 @@ export const Back = styled.div`
     padding-right: 4px;
     background-color: ${styles.colors.calculatorBackColor};
     border-radius: 46px;
-    /* :hover{
-        padding-bottom: 1px;
-    padding-right: 1px;
-    } */
 `;

@@ -14,14 +14,14 @@ export const Buttons = styled.div<ButtonsAttributes>`
     border-radius: 46px;
     display: flex;
     cursor: pointer;
-
+    :active {
+       display: none;
+    }
     h1{
         margin: auto;
         color: white;
     }
 
-    :hover{ 
-    }
 `;
 
 export const Back = styled.div<ButtonsAttributes>`

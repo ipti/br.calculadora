@@ -1,21 +1,18 @@
-import React from "react";
+import Calculator from "../../Components/Calculator";
 import Layout from "../../Components/Layout";
 import Subtract from "../../Components/Subtract";
-import { Grid } from "./style";
-import Calculator from "../../Components/Calculator";
+import { ContainerHome, Grid } from "./style";
+
 
 const Homepage = () => {
     return (
         <Layout>
-            <div>
+            <ContainerHome>
                 <Grid>
                     <Subtract />
                     <Calculator />
                 </Grid>
-            </div>
-            <div>
-                sadkjbsdajkdbsa
-            </div>
+            </ContainerHome>
         </Layout>
     )
 }

@@ -1,54 +1,111 @@
+import { useState } from "react";
 import { Column, Padding, Row } from "../../Style/GlobalStyles";
 import ButtonCalculator from "../Buttons/ButtonsCalculator";
 import { Back, Card, Container, Visor } from "./style";
 
 const Calculator = () => {
+    const [displayValue, setDisplayValue] = useState('0');
+    const [firstOperand, setFirstOperand] = useState<number | null>(null);
+    const [operator, setOperator] = useState<string | null>(null);
+    const [waitingForSecondOperand, setWaitingForSecondOperand] = useState<boolean>(false);
+
+    const inputDigit = (digit: number) => {
+        if (waitingForSecondOperand) {
+            setDisplayValue(String(digit));
+            setWaitingForSecondOperand(false);
+        } else {
+            setDisplayValue(displayValue === '0' ? String(digit) : displayValue + digit);
+        }
+    };
+
+    const inputDecimal = () => {
+        if (!displayValue.includes('.')) {
+            setDisplayValue(displayValue + '.');
+        }
+    };
+
+    const clearDisplay = () => {
+        setDisplayValue('0');
+        setFirstOperand(null);
+        setOperator(null);
+        setWaitingForSecondOperand(false);
+    };
+
+    const performOperation = (nextOperator: string) => {
+        const inputValue = parseFloat(displayValue);
+
+        if (firstOperand === null) {
+            setFirstOperand(inputValue);
+        } else if (operator) {
+            const result = calculate(firstOperand, inputValue, operator);
+            setDisplayValue(String(result));
+            setFirstOperand(result);
+        }
+
+        setWaitingForSecondOperand(true);
+        setOperator(nextOperator);
+    };
+
+    const calculate = (firstOperand: number, secondOperand: number, operator: string) => {
+        switch (operator) {
+            case '+':
+                return firstOperand + secondOperand;
+            case '-':
+                return firstOperand - secondOperand;
+            case 'x':
+                return firstOperand * secondOperand;
+            case '÷':
+                return firstOperand / secondOperand;
+            default:
+                return secondOperand;
+        }
+    };
     return (
         <Container>
             <Card>
-                <Padding padding="32px">
-                    <Column>
-                        <Row id="center">
-                            <Back>
-                                <Visor />
-                            </Back>
-                        </Row>
-                        <Padding padding="8px" />
-                        <Row id="space-between">
-                            <ButtonCalculator title="Ac" />
-                            <ButtonCalculator title="+/-" />
-                            <ButtonCalculator title="%" />
-                            <ButtonCalculator title="÷" />
-                        </Row>
-                        <Padding padding="8px" />
-                        <Row id="space-between">
-                            <ButtonCalculator title="7" />
-                            <ButtonCalculator title="8" />
-                            <ButtonCalculator title="9" />
-                            <ButtonCalculator title="x" />
-                        </Row>
-                        <Padding padding="8px" />
-                        <Row id="space-between">
-                            <ButtonCalculator title="4" />
-                            <ButtonCalculator title="5" />
-                            <ButtonCalculator title="6" />
-                            <ButtonCalculator title="-" />
-                        </Row>
-                        <Padding padding="8px" />
-                        <Row id="space-between">
-                            <ButtonCalculator title="1" />
-                            <ButtonCalculator title="2" />
-                            <ButtonCalculator title="3" />
-                            <ButtonCalculator title="+" />
-                        </Row>
-                        <Padding padding="8px" />
-                        <Row id="space-between">
-                            <ButtonCalculator width="110" title="0" />
-                            <ButtonCalculator title="." />
-                            <ButtonCalculator title="=" />
-                        </Row>
-                    </Column>
-                </Padding>
+                <Column>
+                    <Row id="center">
+                        <Back>
+                            <Visor>
+                                <h1>{displayValue}</h1>
+                            </Visor>
+                        </Back>
+                    </Row>
+                    <Padding padding="8px" />
+                    <Row id="space-between">
+                        <ButtonCalculator onClick={() => clearDisplay()} title="Ac" />
+                        <ButtonCalculator title="+/-" />
+                        <ButtonCalculator title="%" />
+                        <ButtonCalculator onClick={() => performOperation("÷")} title="÷" />
+                    </Row>
+                    <Padding padding="8px" />
+                    <Row id="space-between">
+                        <ButtonCalculator onClick={() => inputDigit(7)} title="7" />
+                        <ButtonCalculator onClick={() => inputDigit(8)} title="8" />
+                        <ButtonCalculator onClick={() => inputDigit(9)} title="9" />
+                        <ButtonCalculator onClick={() => performOperation("x")} title="x" />
+                    </Row>
+                    <Padding padding="8px" />
+                    <Row id="space-between">
+                        <ButtonCalculator onClick={() => inputDigit(4)} title="4" />
+                        <ButtonCalculator onClick={() => inputDigit(5)} title="5" />
+                        <ButtonCalculator onClick={() => inputDigit(6)} title="6" />
+                        <ButtonCalculator onClick={() => performOperation("-")} title="-" />
+                    </Row>
+                    <Padding padding="8px" />
+                    <Row id="space-between">
+                        <ButtonCalculator onClick={() => inputDigit(1)} title="1" />
+                        <ButtonCalculator onClick={() => inputDigit(2)} title="2" />
+                        <ButtonCalculator onClick={() => inputDigit(3)} title="3" />
+                        <ButtonCalculator onClick={() => performOperation("+")} title="+" />
+                    </Row>
+                    <Padding padding="8px" />
+                    <Row id="space-between">
+                        <ButtonCalculator width="110" onClick={() => inputDigit(0)} title="0" />
+                        <ButtonCalculator onClick={() => inputDecimal()} title="." />
+                        <ButtonCalculator onClick={() => performOperation('=')} title="=" />
+                    </Row>
+                </Column>
             </Card>
         </Container>
     )
