@@ -1,9 +1,19 @@
 import React from "react";
-import { InputStyle } from "./style";
+import { InputStyle, Text } from "./style";
+import { Column } from "../../Style/GlobalStyles";
 
-const Input = () => {
-    return(
-        <InputStyle/>
+interface PropsInput {
+    text?: string
+}
+
+const Input = ({ text }: PropsInput) => {
+    return (
+        <>
+            {/* <Text>
+                {text}
+            </Text> */}
+            <InputStyle />
+        </>
     )
 }
 

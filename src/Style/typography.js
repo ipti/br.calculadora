@@ -15,7 +15,8 @@ const typography = {
       extraLight: "Poppins ExtraLight",
       semiBold: "Poppins Bold",
       bold: "Poppins SemiBold",
-      inter: "Inter Regular"
+      inter: "Inter Regular",
+      daleRegular: "Dela Gothic Regular"
     }
   };
   

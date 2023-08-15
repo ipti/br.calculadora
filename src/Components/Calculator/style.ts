@@ -5,13 +5,18 @@ import styles from "../../Style";
 export const Card = styled.div`
     background-color: #F8FAE4;
     border-radius: 46px;
-    width: 80%;
+    width: 60%;
     height: auto;
     padding: 32px;
+    margin: 0 auto;
+    @media only screen and (max-width: 700px) {
+       width: 100%;
+    }
 `;
 
 export const Container = styled.div`
-  width: 30%;
+   
+    width: 40%;
 
   @media only screen and (max-width: 700px) {
        width: 80%;
