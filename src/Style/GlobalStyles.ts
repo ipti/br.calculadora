@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import style from "./index"
+import style from "./index";
 
 import { createGlobalStyle } from 'styled-components';
 
@@ -21,6 +21,14 @@ body,
     font-weight: normal;
     src: local("Poppins Regular"),
         url("./../font/Poppins-Regular.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Dela Gothic Regular";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Dela Gothic Regular"),
+        url("../assets/font/DelaGothicOne-Regular.ttf") format("woff");
 }
 
 @font-face {
@@ -85,7 +93,6 @@ export const Column = styled.div`
 export const Row = styled.div`
     display: flex;
     flex-direction: row;
-    gap: 20px; 
 
     #space-between{
         justify-content: space-between;

@@ -1,19 +1,27 @@
 import React from "react";
-import { InputStyle, Text } from "./style";
-import { Column } from "../../Style/GlobalStyles";
+import { InputStyle, Size, Text } from "./style";
+import { Column, Padding } from "../../Style/GlobalStyles";
 
 interface PropsInput {
-    text?: string
+    text?: string,
+    style?: React.CSSProperties,
+    width?: string,
+    type?: string,
+    onChange?: any,
+    value?: any
 }
 
-const Input = ({ text }: PropsInput) => {
+const Input = ({ text, style, width, type, onChange, value }: PropsInput) => {
     return (
-        <>
-            {/* <Text>
-                {text}
-            </Text> */}
-            <InputStyle />
-        </>
+        <Column>
+            <Size width={width}>
+                <Text style={style}>
+                    {text}
+                </Text>
+                <Padding />
+                <InputStyle type={type} value={value} onChange={onChange} width={width}/>
+            </Size>
+        </Column>
     )
 }
 

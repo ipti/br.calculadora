@@ -9,6 +9,7 @@ const Homepage = () => {
     return (
         <Layout>
             <ContainerHome>
+                <Padding padding="16px"/>
                 <Grid>
                     <Subtract />
                     {/* <Padding padding="10%"/> */}

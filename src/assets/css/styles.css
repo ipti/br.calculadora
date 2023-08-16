@@ -14,6 +14,14 @@ body,
 }
 
 @font-face {
+    font-family: "Dela Gothic Regular";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Dela Gothic Regular"),
+        url("./../font/DelaGothicOne-Regular.ttf") format("woff");
+}
+
+@font-face {
     font-family: "Poppins ExtraLight";
     font-style: normal;
     font-weight: normal;

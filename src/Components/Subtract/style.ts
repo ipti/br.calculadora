@@ -1,5 +1,9 @@
 import { styled } from "styled-components";
-import backgroundJournal from "../../assets/images/journal.svg";
+import backgroundJournal from "../../assets/images/SubtractTop.png";
+import backgroundBody from "../../assets/images/SubtractBody.png";
+import backgroundBottom from "../../assets/images/SubtractBottom.png";
+
+
 import styles from "../../Style";
 
 
@@ -18,12 +22,12 @@ interface PropsIconPlus {
 
 export const IconPlus = styled.div<PropsIconPlus>`
     color: ${props => props.color ? props.color : "black"};
-    font-family: Dela Gothic One;
-    font-size: 27.94px;
+    font-family: ${styles.typography.types.daleRegular};
+    font-size: 57.022px;
     font-style: normal;
-    font-weight: bold;
-    line-height: 20.955px; 
-    letter-spacing: 0.14px;
+    font-weight: 400;
+    line-height: 42.766px; /* 75% */
+    letter-spacing: 0.285px;
 `;
 
 export const Title = styled.div`
@@ -31,23 +35,58 @@ export const Title = styled.div`
     color: #4F5683;
     font-size: 57.022px;
     font-style: normal;
-    font-weight: bold;
+    font-weight: 400;
     line-height: 42.766px; /* 75% */
     letter-spacing: 0.285px;
+    @media only screen and (max-width: 700px) {
+       display: flex;
+       flex-direction: column;
+       font-size: 32px;
+    }
 `;
-export const BackgroundJournal = styled.div`
+export const BackgroundTop = styled.div`
+    border-top-right-radius: 49px;
+    border-top-left-radius: 49px;
     background-image: url(${backgroundJournal});
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     background-size: 100%;
-    height: 100%;
+    max-height: auto;
+    height: auto;
     width: 100%;
-    background-size: 80%;
+    background-size: 100%;
     background-repeat: no-repeat;
     object-fit: cover;
-    /* img{
-        width: 20%;
-    } */
-
 `;
+
+export const BackgroundBody = styled.div`
+    border-radius: 49px;
+    background-image: url(${backgroundBody});
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-size: 100%;
+    height: auto;
+    width: 100%;
+    background-size: 100%;
+    object-fit: cover;
+`;
+
+export const BackgroundBottom = styled.div`
+    background-image: url(${backgroundBottom});
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-size: 100%;
+    max-height: 140px;
+    height: 100%;
+    width: 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    object-fit: cover;
+`;
+
 
 export const Container = styled.div`
     /* display: flex;
