@@ -33,7 +33,7 @@ export const IconPlus = styled.div<PropsIconPlus>`
 export const Title = styled.div`
     font-family: ${styles.typography.types.daleRegular};
     color: #4F5683;
-    font-size: 57.022px;
+    font-size: 50.022px;
     font-style: normal;
     font-weight: 400;
     line-height: 42.766px; /* 75% */
@@ -62,7 +62,7 @@ export const BackgroundTop = styled.div`
 
 export const BackgroundBody = styled.div`
     border-radius: 49px;
-    background-image: url(${backgroundBody});
+    background: url(${backgroundBody});
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -71,6 +71,11 @@ export const BackgroundBody = styled.div`
     width: 100%;
     background-size: 100%;
     object-fit: cover;
+
+    @media only screen and (max-width: 1200px) {
+       background: #f8fae4;
+    }
+
 `;
 
 export const BackgroundBottom = styled.div`
@@ -93,7 +98,7 @@ export const Container = styled.div`
     flex-direction: column; */
     height: auto;
     width: 60%;
-    @media only screen and (max-width: 700px) {
+    @media only screen and (max-width: 1200px) {
       width: 100%;
     }
 `;

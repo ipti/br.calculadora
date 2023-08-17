@@ -26,8 +26,8 @@ const Layout = ({ children }: Props) => {
                 </VectorRight>
                 <Container>
                     <Padding padding="32px">
-                        <Row>
-                            <Button title={"Calculadora"} type="primary" />                            
+                        <Row id="start">
+                            <Button title={"Calculadora"} type="primary" />
                             <Button title={"Autoavaliação"} type="secondary" />
                         </Row>
                            {children}
