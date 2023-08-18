@@ -2,6 +2,7 @@ import { styled } from "styled-components";
 import backgroundJournal from "../../assets/images/SubtractTop.png";
 import backgroundBody from "../../assets/images/SubtractBody.png";
 import backgroundBottom from "../../assets/images/SubtractBottom.png";
+import rows from "../../assets/images/rows.png"
 
 
 import styles from "../../Style";
@@ -71,10 +72,24 @@ export const BackgroundBody = styled.div`
     width: 100%;
     background-size: 100%;
     object-fit: cover;
-
     @media only screen and (max-width: 1200px) {
        background: #f8fae4;
     }
+
+`;
+
+export const Rows = styled.div`
+    background: url(${rows});
+    background-size: 100%;
+    height: auto;
+    max-height: 80%;
+    width: 100%;
+    background-size: 100%;
+    object-fit: cover;
+
+    /* @media only screen and (max-width: 1200px) {
+       background: #f8fae4;
+    } */
 
 `;
 
