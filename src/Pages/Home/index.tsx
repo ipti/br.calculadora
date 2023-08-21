@@ -1,21 +1,24 @@
+import { useState } from "react";
 import Calculator from "../../Components/Calculator";
 import Layout from "../../Components/Layout";
 import Subtract from "../../Components/Subtract";
 import { Padding } from "../../Style/GlobalStyles";
 import { ContainerHome, Grid } from "./style";
+import Feedback from "../../Components/Feedback";
 
 
 const Homepage = () => {
+
+    const [page, setPage] = useState(0)
     return (
-        <Layout>
-            <ContainerHome>
+        <Layout set={setPage}>
+            {page === 0 ? <ContainerHome>
                 <Padding padding="16px"/>
                 <Grid>
                     <Subtract />
-                    {/* <Padding padding="10%"/> */}
                     <Calculator />
                 </Grid>
-            </ContainerHome>
+            </ContainerHome> : page === 1 ? <Feedback/> : <div>Not found</div>}
         </Layout>
     )
 }

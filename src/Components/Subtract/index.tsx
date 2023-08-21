@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Column, Padding, Row } from "../../Style/GlobalStyles";
+import { Column, Padding, Row, RowResponse } from "../../Style/GlobalStyles";
 import Input from "../Input";
-import { BackgroundBody, Container, IconPlus, Rows, Title } from "./style";
+import { BackgroundBody, Container, IconPlus, RowRed, Rows, Title, TitleSmall } from "./style";
 
 
 const Subtract = () => {
@@ -17,8 +17,8 @@ const Subtract = () => {
         <>
             <Container>
                 <BackgroundBody>
-                    <Row style={{width: "100%"}}>
-                    <div style={{ width: "1px", background: "red" }}/>
+                    <RowResponse style={{ width: "100%" }}>
+                        <RowRed />
                         <Rows>
                             <Column style={{ alignItems: "center" }}>
                                 <Padding padding="0px" />
@@ -59,26 +59,31 @@ const Subtract = () => {
                                     </Column>
                                     <Input value={(totais + totais * 0.3).toFixed(2)} text="Preço" />
                                 </Row>
-                                <Padding padding="32px" />
+                                <Padding padding="45px" />
                             </Column>
                         </Rows>
-                    </Row>
+                    </RowResponse>
                 </BackgroundBody>
                 <Padding padding="16px" />
                 <BackgroundBody>
-                    <Column style={{ alignItems: "center" }}>
-                        <Padding padding="32px" />
-                        <Title style={{ fontSize: "30.478px" }}>2° forma de calcular o preço</Title>
-                        <Padding padding="32px" />
-                        <Row>
-                            <Padding padding="2px" width="8%" />
-                            <Input value={"100%"} width="50%" text="Preço" />
-                            <Input value={"50%"} width="50%" text="Custo" />
-                            <Input value={"25%"} text="Pagamento pelo trabalho" />
-                            <Input value={"25%"} text="Lucro para o Negócio" />
-                        </Row>
-                        <Padding padding="32px" />
-                    </Column>
+                    <RowResponse>
+                        <RowRed />
+                        <Rows>
+                            <Column style={{ alignItems: "center" }}>
+                                <Padding padding="8px" />
+                                <TitleSmall>2° forma de calcular o preço</TitleSmall>
+                                <Padding padding="32px" />
+                                <Row>
+                                    <Padding padding="2px" width="8%" />
+                                    <Input value={"100%"} width="50%" text="Preço" />
+                                    <Input value={"50%"} width="50%" text="Custo" />
+                                    <Input value={"25%"} text="Pagamento pelo trabalho" />
+                                    <Input value={"25%"} text="Lucro para o Negócio" />
+                                </Row>
+                                <Padding padding="24px" />
+                            </Column>
+                        </Rows>
+                    </RowResponse>
                 </BackgroundBody>
                 <Padding padding="16px" />
             </Container>

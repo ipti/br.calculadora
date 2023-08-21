@@ -88,6 +88,55 @@ export const Column = styled.div`
         justify-content: end;
     }
 
+    #response {
+        flex-direction: row;
+    }
+`;
+
+export const ColumnResponse = styled.div`
+    display: flex;
+    flex-direction: column;
+
+    #space-between{
+        justify-content: space-between;
+    }
+    #center{
+        justify-content: center;
+    }
+    #start{
+        justify-content: start;
+    }
+    #end{
+        justify-content: end;
+    }
+
+
+    @media only screen and (max-width: 1000px) {
+      flex-direction: row;
+    }
+`;
+
+export const RowResponse = styled.div`
+    display: flex;
+    flex-direction: row;
+
+    #space-between{
+        justify-content: space-between;
+    }
+    #center{
+        justify-content: center;
+    }
+    #start{
+        justify-content: start;
+    }
+    #end{
+        justify-content: end;
+    }
+
+
+    @media only screen and (max-width: 1000px) {
+      flex-direction: column;
+    }
 `;
 
 export const Row = styled.div`
@@ -107,6 +156,10 @@ export const Row = styled.div`
         justify-content: end;
     }
 
+    #response {
+        flex-direction: column;
+    }
+
 `;
 
 interface PaddingAttributes {
@@ -120,8 +173,8 @@ export const Padding = styled.div<PaddingAttributes>`
 `;
 
 export const Container = styled.div`
-display: flex;
-flex: 1;
+    display: flex;
+    flex: 1;
     height: 100%;
     width: 100%;
     font-size: ${style.typography.font.medium};

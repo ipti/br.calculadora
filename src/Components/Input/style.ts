@@ -21,15 +21,15 @@ type PropsSize = {
 }
 
 export const Text = styled.div<PropsSize>`
-    color: #023047;
+    color: black;
     font-family: ${styles.typography.types.inter};
     font-size: 10px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: bold;
     line-height: 20px; /* 125% */
     letter-spacing: 0.08px;
     @media only screen and (max-width: 700px) {
-        font-size: 6px;
+        font-size: 7px;
     }
 `;
 

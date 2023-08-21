@@ -7,10 +7,11 @@ import { VectorLeft, VectorRight, VectorTop, Stack } from "./style";
 import Button from "../Buttons/button";
 
 interface Props {
-    children: React.ReactNode
+    children: React.ReactNode,
+    set: any
 }
 
-const Layout = ({ children }: Props) => {
+const Layout = ({ children, set }: Props) => {
     return (
         <div style={{ width: "100%", height: "100%", position: "fixed" }}>
             <Stack>
@@ -27,10 +28,10 @@ const Layout = ({ children }: Props) => {
                 <Container>
                     <Padding padding="32px">
                         <Row id="start">
-                            <Button title={"Calculadora"} type="primary" />
-                            <Button title={"Autoavaliação"} type="secondary" />
+                            <Button title={"Calculadora"} onClick={() => set(0)} type="primary" />
+                            <Button title={"Autoavaliação"} onClick={() => set(1)} type="secondary" />
                         </Row>
-                           {children}
+                        {children}
                     </Padding>
                 </Container>
             </Stack>
