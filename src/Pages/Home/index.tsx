@@ -11,14 +11,14 @@ const Homepage = () => {
 
     const [page, setPage] = useState(0)
     return (
-        <Layout set={setPage}>
+        <Layout value={page} set={setPage}>
             {page === 0 ? <ContainerHome>
-                <Padding padding="16px"/>
+                <Padding padding="16px" />
                 <Grid>
                     <Subtract />
                     <Calculator />
                 </Grid>
-            </ContainerHome> : page === 1 ? <Feedback/> : <div>Not found</div>}
+            </ContainerHome> : page === 1 ? <ContainerHome><Feedback /></ContainerHome> : <div>Not found</div>}
         </Layout>
     )
 }

@@ -19,7 +19,13 @@ export const Buttons = styled.div<ButtonsAttributes>`
     }
     h1{
         margin: auto;
-        color: white;
+        color: #FFF;
+        font-family: ${styles.typography.types.daleRegular};
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 25.859px; /* 107.745% */
+        letter-spacing: 0.12px;
     }
 
 `;

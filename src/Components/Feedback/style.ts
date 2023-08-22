@@ -18,7 +18,7 @@ export const Sheet = styled.div`
 
     @media only screen and (max-width: 600px) {
        background: #f8fae4;
-       width: 120%;
+       width: 200%;
     }
 
 `;

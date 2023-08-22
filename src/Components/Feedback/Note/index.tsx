@@ -1,4 +1,4 @@
-import { Padding, Row } from "../../../Style/GlobalStyles";
+import { Padding, RowResponse } from "../../../Style/GlobalStyles";
 import ButtonNote from "./ButtonNote";
 import { Question } from "./style";
 
@@ -18,7 +18,7 @@ const Note = ({ question, setValue, value }: PropsNote) => {
                 {question}
             </Question>
             <Padding />
-            <Row>
+            <RowResponse>
                 <ButtonNote active={value === 1} onClick={() => setValue(1)} title="1" />
                 <Padding  padding="2px" />
                 <ButtonNote active={value === 2} onClick={() => setValue(2)}  title="2" />
@@ -38,7 +38,7 @@ const Note = ({ question, setValue, value }: PropsNote) => {
                 <ButtonNote active={value === 9} onClick={() => setValue(9)}  title="9" />
                 <Padding padding="2px" />
                 <ButtonNote active={value === 10} onClick={() => setValue(10)}  title="10" />
-            </Row>
+            </RowResponse>
         </div>
     )
 }

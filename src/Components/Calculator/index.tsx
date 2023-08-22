@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Column, Padding, Row } from "../../Style/GlobalStyles";
 import ButtonCalculator from "../Buttons/ButtonsCalculator";
 import { Back, Card, Container, Visor } from "./style";
+import logo from "../../assets/images/ON_Padrão.svg";
+
 
 const Calculator = () => {
     const [displayValue, setDisplayValue] = useState('0');
@@ -107,6 +109,12 @@ const Calculator = () => {
                     </Row>
                 </Column>
             </Card>
+            <Padding padding="32px" />
+            <Row style={{ justifyContent: "center" }} id="center">
+                <img src={logo} alt="" />
+            </Row>
+            <Padding padding="32px" />
+
         </Container>
     )
 }

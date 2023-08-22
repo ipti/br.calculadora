@@ -6,6 +6,7 @@ export const Card = styled.div`
     background-color: #F8FAE4;
     border-radius: 46px;
     width: 60%;
+    max-width: 450px;
 
     height: auto;
     padding: 32px;
@@ -16,7 +17,6 @@ export const Card = styled.div`
 `;
 
 export const Container = styled.div`
-   max-width: 450px;
     width: 40%;
   @media only screen and (max-width: 700px) {
        width: 80%;
