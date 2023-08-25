@@ -13,18 +13,43 @@ const Subtract = () => {
 
 
     var totais = (parseFloat(custoProduc.toString()) + parseFloat(maoObra.toString()))
-    
+
 
     return (
         <>
             <Container>
+
+                <BackgroundBody>
+                    <RowResponse>
+                        <RowRed />
+                        <Rows>
+                            <Column style={{ alignItems: "center" }}>
+                                <Title style={{ margin: "auto" }}>Preço na Prática</Title>
+                                <Padding padding="16px" />
+                                 <Padding />
+                                <TitleSmall>1° forma de calcular o preço</TitleSmall>
+                                <Row>
+                                    <Padding padding="2px" width="8%" />
+                                    <Grid checkMockup={[{}, {}, {}, {}]}>
+                                        <Input value={custo ? ((custo * 0.5) * 2 + parseFloat(custo.toString())).toFixed(2) : "100%"} text="Preço" />
+                                        <Input value={custo} type="number" onChange={(e: any) => setCusto(e.target.value)} text="Custo" />
+                                        <Input value={custo ? custo * 0.5 : "25%"} text="Pagamento pelo trabalho" />
+                                        <Input value={custo ? custo * 0.5 : "25%"} text="Lucro para o Negócio" />
+                                    </Grid>
+                                </Row>
+                                <Padding padding="24px" />
+                            </Column>
+                        </Rows>
+                    </RowResponse>
+                </BackgroundBody>
+                <Padding padding="16px" />
                 <BackgroundBody>
                     <RowResponse style={{ width: "100%" }}>
                         <RowRed />
                         <Rows>
                             <Column style={{ alignItems: "center" }}>
                                 <Padding padding="0px" />
-                                <Title style={{ margin: "auto" }}>Preço na Prática</Title>
+                                <TitleSmall>2° forma de calcular o preço</TitleSmall>
                                 <Padding padding="32px" />
                                 <Row id="center">
                                     <Input value={custoProduc} onChange={(e: any) => { setCustoProduc(e.target.value); }} type="number" text="Custo de Produção" />
@@ -67,28 +92,7 @@ const Subtract = () => {
                     </RowResponse>
                 </BackgroundBody>
                 <Padding padding="16px" />
-                <BackgroundBody>
-                    <RowResponse>
-                        <RowRed />
-                        <Rows>
-                            <Column style={{ alignItems: "center" }}>
-                                <TitleSmall>2° forma de calcular o preço</TitleSmall>
-                                <Padding padding="16px" />
-                                <Row>
-                                    <Padding padding="2px" width="8%" />
-                                    <Grid checkMockup={[{}, {}, {}, {}]}>
-                                        <Input value={custo ? ((custo*0.5)*2 + parseFloat(custo.toString())).toFixed(2): "100%"}  text="Preço" />
-                                        <Input value={custo} type="number"  onChange={(e:any) => setCusto(e.target.value)} text="Custo" />
-                                        <Input value={custo ? custo*0.5 : "25%"} text="Pagamento pelo trabalho" />
-                                        <Input value={custo ? custo*0.5 : "25%"} text="Lucro para o Negócio" />
-                                    </Grid>
-                                </Row>
-                                <Padding padding="24px" />
-                            </Column>
-                        </Rows>
-                    </RowResponse>
-                </BackgroundBody>
-                <Padding padding="16px" />
+
             </Container>
         </>
     )
