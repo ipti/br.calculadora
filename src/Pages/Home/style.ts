@@ -7,7 +7,7 @@ export const Grid = styled.div`
     width: 100%;
     height: 100%;
 
-    @media only screen and (max-width: 1000px) {
+    @media only screen and (max-width: 1070px) {
        display: flex;
        flex-direction: column;
     }

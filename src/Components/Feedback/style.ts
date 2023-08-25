@@ -11,7 +11,7 @@ export const Sheet = styled.div`
     width: 70%;
     background-size: 100%;
     object-fit: cover;
-    @media only screen and (max-width: 1000px) {
+    @media only screen and (max-width: 1070px) {
        background: #f8fae4;
        width: auto;
     }
@@ -43,7 +43,7 @@ export const Title = styled.div`
 export const Container = styled.div`
     height: auto;
     width: 100%;
-    @media only screen and (max-width: 1000px) {
+    @media only screen and (max-width: 1070px) {
       width: 100%;
     }
 `;

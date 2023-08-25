@@ -53,7 +53,7 @@ export const TitleSmall = styled.div`
     font-weight: 400;
     line-height: 42.766px; /* 75% */
     letter-spacing: 0.285px;
-    @media only screen and (max-width: 1100px) {
+    @media only screen and (max-width: 1070px) {
        display: flex;
        flex-direction: column;
        font-size: 24px;
@@ -70,7 +70,7 @@ export const BackgroundBody = styled.div`
     width: 100%;
     background-size: 100%;
     object-fit: cover;
-    @media only screen and (max-width: 1000px) {
+    @media only screen and (max-width: 1070px) {
        background: #f8fae4;
        width: auto;
     }
@@ -86,7 +86,7 @@ export const Rows = styled.div`
     background: url(${rows});
     background-size: 100%;
     height: auto;
-    margin: 10% auto;
+    margin: 5% auto;
     max-height: 80%;
 
     width: 100%;
@@ -105,7 +105,7 @@ export const Rows = styled.div`
 export const Container = styled.div`
     height: auto;
     width: 60%;
-    @media only screen and (max-width: 1000px) {
+    @media only screen and (max-width: 1070px) {
       width: 100%;
     }
 `;
@@ -115,7 +115,7 @@ export const RowRed = styled.div`
     background: red; 
     margin-left: 12%;
 
-     @media only screen and (max-width: 1000px) {
+     @media only screen and (max-width: 1070px) {
       margin-top: 8%;
       width: 100%;
       height: 1px;

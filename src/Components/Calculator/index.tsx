@@ -26,6 +26,11 @@ const Calculator = () => {
         }
     };
 
+    const toggleSign = () => {
+        setDisplayValue((parseFloat(displayValue) * -1).toString());
+    };
+    
+
     const clearDisplay = () => {
         setDisplayValue('0');
         setFirstOperand(null);
@@ -58,10 +63,13 @@ const Calculator = () => {
                 return firstOperand * secondOperand;
             case '÷':
                 return firstOperand / secondOperand;
+            case '%':
+                return (firstOperand / 100) * secondOperand;
             default:
                 return secondOperand;
         }
     };
+    
     return (
         <Container>
             <Card>
@@ -76,8 +84,8 @@ const Calculator = () => {
                     <Padding padding="8px" />
                     <Row id="space-between">
                         <ButtonCalculator onClick={() => clearDisplay()} title="Ac" />
-                        <ButtonCalculator title="+/-" />
-                        <ButtonCalculator title="%" />
+                        <ButtonCalculator title="+/-" onClick={() => toggleSign()} />
+                        <ButtonCalculator title="%" onClick={() => performOperation("%")} />
                         <ButtonCalculator onClick={() => performOperation("÷")} title="÷" />
                     </Row>
                     <Padding padding="8px" />

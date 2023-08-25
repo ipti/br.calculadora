@@ -111,7 +111,7 @@ export const ColumnResponse = styled.div`
     }
 
 
-    @media only screen and (max-width: 1000px) {
+    @media only screen and (max-width: 1070px) {
       flex-direction: row;
     }
 `;
@@ -134,7 +134,7 @@ export const RowResponse = styled.div`
     }
 
 
-    @media only screen and (max-width: 1000px) {
+    @media only screen and (max-width: 1070px) {
       flex-direction: column;
     }
 `;
@@ -170,6 +170,32 @@ interface PaddingAttributes {
 export const Padding = styled.div<PaddingAttributes>`
     padding: ${props => props.padding || "4px"};
     width: ${props => props.width || "100%"};
+`;
+
+interface GridAttributes {
+    checkMockup?: any,
+}
+
+export const Grid = styled.div<GridAttributes>`
+    display: grid;
+    column-gap: 15px;
+    padding: 16px;
+    grid-template-areas: "CD CD CD";
+    grid-template-columns: ${(props) =>
+           props.checkMockup.length === 4 ? "repeat(4, 24.5%)" : props.checkMockup.length === 3 ? "repeat(3, 33%)" : props.checkMockup.length === 2 ? "repeat(2, 50%)" : "repeat(2, 50%)"};
+
+    @media (max-width: 1300px) {
+        grid-template-areas: "CD CD";
+        grid-template-columns: ${(props) =>
+            props.checkMockup ? "repeat(2, 50%)" : "repeat(1, 100%)"};
+    }
+
+ 
+    @media (max-width: 360px) {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+  
 `;
 
 export const Container = styled.div`

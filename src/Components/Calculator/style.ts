@@ -5,12 +5,20 @@ import styles from "../../Style";
 export const Card = styled.div`
     background-color: #F8FAE4;
     border-radius: 46px;
-    width: 60%;
+    width: 50%;
     max-width: 450px;
 
     height: auto;
     padding: 32px;
     margin: 0 auto;
+
+    @media only screen and (max-width: 1250px) {
+       width: 60%;
+    }
+   
+    @media only screen and (max-width: 1070px) {
+       width: 80%;
+    }
     @media only screen and (max-width: 700px) {
        width: 100%;
     }

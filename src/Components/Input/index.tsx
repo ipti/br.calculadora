@@ -16,7 +16,7 @@ const Input = ({ text, style, width, type, onChange, value }: PropsInput) => {
                 <Text style={style}>
                     {text}
                 </Text>
-                <InputStyle type={type} value={value} onChange={onChange} width={width}/>
+                <InputStyle step="0.01"min="0.01" type={type} value={value} onChange={onChange} width={width}/>
              </Size>
     )
 }

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Column, Padding, Row, RowResponse } from "../../Style/GlobalStyles";
+import { Column, Grid, Padding, Row, RowResponse } from "../../Style/GlobalStyles";
 import Input from "../Input";
 import { BackgroundBody, Container, IconPlus, RowRed, Rows, Title, TitleSmall } from "./style";
 
@@ -9,9 +9,11 @@ const Subtract = () => {
 
     const [custoProduc, setCustoProduc] = useState(0);
     const [maoObra, setMaoObra] = useState(0);
+    const [custo, setCusto] = useState(0)
 
 
     var totais = (parseFloat(custoProduc.toString()) + parseFloat(maoObra.toString()))
+    
 
     return (
         <>
@@ -70,15 +72,16 @@ const Subtract = () => {
                         <RowRed />
                         <Rows>
                             <Column style={{ alignItems: "center" }}>
-                                <Padding padding="8px" />
                                 <TitleSmall>2° forma de calcular o preço</TitleSmall>
-                                <Padding padding="32px" />
+                                <Padding padding="16px" />
                                 <Row>
                                     <Padding padding="2px" width="8%" />
-                                    <Input value={"100%"} width="50%" text="Preço" />
-                                    <Input value={"50%"} width="50%" text="Custo" />
-                                    <Input value={"25%"} text="Pagamento pelo trabalho" />
-                                    <Input value={"25%"} text="Lucro para o Negócio" />
+                                    <Grid checkMockup={[{}, {}, {}, {}]}>
+                                        <Input value={custo ? ((custo*0.5)*2 + parseFloat(custo.toString())).toFixed(2): "100%"}  text="Preço" />
+                                        <Input value={custo} type="number"  onChange={(e:any) => setCusto(e.target.value)} text="Custo" />
+                                        <Input value={custo ? custo*0.5 : "25%"} text="Pagamento pelo trabalho" />
+                                        <Input value={custo ? custo*0.5 : "25%"} text="Lucro para o Negócio" />
+                                    </Grid>
                                 </Row>
                                 <Padding padding="24px" />
                             </Column>
