@@ -6,13 +6,16 @@ interface PropsButton {
     active?: boolean
 }
 
-const ButtonNote = ({onClick, title, active}: PropsButton) => {
 
-    return(
+
+const ButtonNote = ({ onClick, title, active }: PropsButton) => {
+
+    return (
         <Button active={active} onClick={onClick}>
             {title}
         </Button>
     )
 }
+
 
 export default ButtonNote;

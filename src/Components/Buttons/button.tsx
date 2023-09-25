@@ -9,19 +9,23 @@ interface ButtonProps {
 }
 
 const isPrimary = (type: string | undefined) => {
-    if(type === "primary"){
-        return true
+    if (type === "primary") {
+        return true;
+    } else if (type === "secondary") {
+        return false;
+    } else {
+        // Caso nenhum dos casos anteriores seja correspondido
+        return undefined;
     }
-    if(type === "secondary"){
-        return false
-    }
-    
-}
+};
 
 
 
-const Button: React.FC <ButtonProps> = ({ title, onClick, type }) => {
-  
+
+
+
+const Button: React.FC<ButtonProps> = ({ title, onClick, type }) => {
+
 
     return (
         <ButtonStyle $primary={isPrimary(type)} onClick={onClick}>

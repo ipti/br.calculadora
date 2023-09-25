@@ -9,8 +9,10 @@ export const Card = styled.div`
     max-width: 450px;
 
     height: auto;
-    padding: 32px;
+    padding: 20px;
     margin: 0 auto;
+
+
 
     @media only screen and (max-width: 1250px) {
        width: 60%;
@@ -26,6 +28,7 @@ export const Card = styled.div`
 
 export const Container = styled.div`
     width: 40%;
+
   @media only screen and (max-width: 700px) {
        width: 80%;
     }
@@ -39,11 +42,13 @@ export const Visor = styled.div`
     justify-content: end;
     width: 100%;
     border-radius: 46px;
+    overflow: hidden;
     h1{
-        
-        margin: auto;
+        font-family: Dela Gothic Regular;
+        margin: 10px;
         margin-left: auto;
         color: white;
+        font
     }
 `;
 

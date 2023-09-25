@@ -29,7 +29,7 @@ const Calculator = () => {
     const toggleSign = () => {
         setDisplayValue((parseFloat(displayValue) * -1).toString());
     };
-    
+
 
     const clearDisplay = () => {
         setDisplayValue('0');
@@ -69,7 +69,7 @@ const Calculator = () => {
                 return secondOperand;
         }
     };
-    
+
     return (
         <Container>
             <Card>

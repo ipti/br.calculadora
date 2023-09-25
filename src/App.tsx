@@ -1,7 +1,5 @@
 import GlobalStyle from "./Style/GlobalStyles";
-
 import Homepage from './Pages/Home';
-
 import "./assets/css/styles.css"
 
 function App() {
@@ -14,3 +12,5 @@ function App() {
 }
 
 export default App;
+
+

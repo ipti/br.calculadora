@@ -80,6 +80,12 @@ export const Column = styled.div`
     }
     #center{
         justify-content: center;
+        display: flex;
+        gap: 20px;
+        @media only screen and (max-width: 550px) {
+            gap: 0px;
+          }
+
     }
     #start{
         justify-content: start;
@@ -137,11 +143,13 @@ export const RowResponse = styled.div`
     @media only screen and (max-width: 1070px) {
       flex-direction: column;
     }
+    
 `;
 
 export const Row = styled.div`
     display: flex;
     flex-direction: row;
+
 
     #space-between{
         justify-content: space-between;
@@ -170,6 +178,10 @@ interface PaddingAttributes {
 export const Padding = styled.div<PaddingAttributes>`
     padding: ${props => props.padding || "4px"};
     width: ${props => props.width || "100%"};
+
+    
+  
+
 `;
 
 interface GridAttributes {
@@ -178,17 +190,32 @@ interface GridAttributes {
 
 export const Grid = styled.div<GridAttributes>`
     display: grid;
-    column-gap: 15px;
-    padding: 16px;
+    column-gap: 10px;
+    padding: 20px;
     grid-template-areas: "CD CD CD";
-    grid-template-columns: ${(props) =>
-           props.checkMockup.length === 4 ? "repeat(4, 24.5%)" : props.checkMockup.length === 3 ? "repeat(3, 33%)" : props.checkMockup.length === 2 ? "repeat(2, 50%)" : "repeat(2, 50%)"};
 
-    @media (max-width: 1300px) {
+    grid-template-columns: ${(props) =>
+        props.checkMockup.length === 4 ? "repeat(4, 24.5%)" : props.checkMockup.length === 3 ? "repeat(3, 33%)" : props.checkMockup.length === 2 ? "repeat(2, 50%)" : "repeat(2, 50%)"};
+
+    @media (max-width: 1309px) {
+        column-gap: 8px;
+        grid-template-columns: ${(props) =>
+        props.checkMockup ? "repeat(4, 23%)" : "repeat(1, 100%)"};
+            margin-top: -20px;
+            margin-left: 40px;
+    }
+
+    @media (max-width: 1100px) {
         grid-template-areas: "CD CD";
         grid-template-columns: ${(props) =>
-            props.checkMockup ? "repeat(2, 50%)" : "repeat(1, 100%)"};
+        props.checkMockup ? "repeat(2, 50%)" : "repeat(1, 100%)"};
     }
+    @media (max-width: 1100px) {
+        column-gap: 16px;
+        margin-left: -5px;
+    }
+
+
 
  
     @media (max-width: 360px) {

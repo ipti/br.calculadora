@@ -1,0 +1,67 @@
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.float-image {
+  position: absolute;
+  top: -10px;
+  right: 0px;
+  animation: float 1s ease infinite;
+  width: 35%;
+}
+
+.result-card-container {
+  background: url("../../assets/images/backgroundTasks.png");
+  position: relative;
+  background-size: 90% 90%;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 100px;
+  display: inline-block;
+
+  box-sizing: border-box;
+
+  @media only screen and (max-width: 900px) {
+    width: calc(51.33% - 20px);
+ }
+
+}
+
+.result-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ccc;
+}
+
+.result-card h3 {
+  font-size: 1.2em;
+}
+
+.result-card p {
+  font-size: 1em;
+}
+
+.result-card img {
+  max-width: 100%;
+  height: auto;
+}
+
+.result-card ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.result-card li {
+  margin-bottom: 5px;
+}
