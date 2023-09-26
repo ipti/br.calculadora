@@ -47,7 +47,7 @@ const Subtract = () => {
                     <RowResponse style={{ width: "100%" }}>
                         {/* <RowRed /> */}
                         <Rows>
-                            <Column style={{ alignItems: "center", marginTop: "59px", marginLeft: "45px", padding: "10px" }}>
+                            <Column style={{ alignItems: "center", marginTop: "59px", marginLeft: "0px", padding: "10px" }}>
 
                                 <TitleSmall>2° forma de calcular o preço</TitleSmall>
                                 <Padding padding="20px" />
@@ -88,7 +88,7 @@ const Subtract = () => {
                                         <Input value={(totais + totais * 0.3).toFixed(2)} text="Preço" />
                                     </Row>
                                 </CustomRow>
-                                <Padding padding="45px" />
+                                <Padding padding="20px" />
                             </Column>
                         </Rows>
                     </RowResponse>

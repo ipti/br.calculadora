@@ -128,7 +128,7 @@ export const BackgroundBody = styled.div`
  
 
      @media only screen and (max-width: 600px) {
-        width: 88vw;    
+        width: 100%;    
         margin-right: 20px; 
     
     }
@@ -151,7 +151,7 @@ export const BackgroundBodyDown = styled.div`
     }
 
     @media only screen and (max-width: 600px) {
-        width: 88vw;    
+        width: 100%;    
         margin-right: 20px; 
     
     }
@@ -163,7 +163,7 @@ export const Rows = styled.div`
     // background: url(${rows});
     background-size: 100%;
     height: auto;
-    margin: 0% auto;
+    margin: 2% auto;
     max-height: 80%;
 
     width: 100%;

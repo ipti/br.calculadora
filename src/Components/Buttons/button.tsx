@@ -19,11 +19,6 @@ const isPrimary = (type: string | undefined) => {
     }
 };
 
-
-
-
-
-
 const Button: React.FC<ButtonProps> = ({ title, onClick, type }) => {
 
 

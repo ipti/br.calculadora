@@ -15,7 +15,7 @@ export const Sheet = styled.div`
 
     @media only screen and (max-width: 1070px) {
        background: #f8fae4;
-       width: auto%;
+       width: 100%;
     }
 `;
 
@@ -33,6 +33,11 @@ export const Title = styled.div`
        flex-direction: column;
        font-size: 32px;
     }
+
+    @media only screen and (max-width: 640px) {
+        font-size: 28px;
+        text-align: center;
+     }
 `;
 
 export const Title2 = styled.div`
@@ -49,6 +54,8 @@ export const Title2 = styled.div`
        font-size: 22px;
     }
 `;
+
+
 
 export const Container = styled.div`
     height: auto;

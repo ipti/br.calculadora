@@ -16,6 +16,7 @@ import {
 } from "./style";
 
 import ButtonCalculator from "../Buttons/ButtonsCalculator";
+import ButtonsNextProx from "../Buttons/ButtonsNextProx";
 
 const Feedback: React.FC = () => {
     const [step, setStep] = useState<number>(1);
@@ -515,14 +516,14 @@ const Feedback: React.FC = () => {
                             <Padding padding="16px" />
                             <Row id="center">
                                 {step > 1 && step <= 9 && (
-                                    <ButtonCalculator
+                                    <ButtonsNextProx
                                         width="250"
                                         title="Voltar"
                                         onClick={handlePrevStep}
                                     />
                                 )}
                                 {step > 0 && step < 9 && (
-                                    <ButtonCalculator
+                                    <ButtonsNextProx
                                         width="250"
                                         title={nome_but}
                                         onClick={handleNextStep}
@@ -530,7 +531,7 @@ const Feedback: React.FC = () => {
                                 )}
                                 {step === 9 && (
                                     <>
-                                        <ButtonCalculator
+                                        <ButtonsNextProx
                                             width="250"
                                             title="Submeter"
                                             onClick={handleSubmit}

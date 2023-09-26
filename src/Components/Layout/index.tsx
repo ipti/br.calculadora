@@ -47,7 +47,7 @@ const Layout = ({ children, set, value }: Props) => {
                     <img alt="" src={vectorRight} />
                 </VectorRight>
                 <Container>
-                    <Padding padding="32px">
+                    <Padding padding="32px 12px">
                         <Row id="space-between">
                             <>
                                 <Link to="/">

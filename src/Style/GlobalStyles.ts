@@ -125,6 +125,10 @@ export const ColumnResponse = styled.div`
 export const RowResponse = styled.div`
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    flex-wrap: wrap;
 
     #space-between{
         justify-content: space-between;
@@ -139,9 +143,9 @@ export const RowResponse = styled.div`
         justify-content: end;
     }
 
-
-    @media only screen and (max-width: 1070px) {
-      flex-direction: column;
+    @media only screen and (max-width: 1060px) {
+      
+        justify-content: center;
     }
     
 `;

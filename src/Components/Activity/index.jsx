@@ -108,7 +108,7 @@ const Activity = ({ questions, passar }) => {
         } else {
             indicesBetween6And9 = questionList
                 .map((question, index) => ({ value: question, index }))
-                .filter(({ value }) => value >= 6 && value <= 9)
+                .filter(({ value }) => value >= 6 && value <= 8)
                 .map(({ index }) => index);
 
             if (indicesBetween6And9.length > 0) {

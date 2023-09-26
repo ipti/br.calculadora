@@ -9,7 +9,7 @@ export const Card = styled.div`
     max-width: 450px;
 
     height: auto;
-    padding: 20px;
+    // padding: 20px;
     margin: 0 auto;
 
 
@@ -21,8 +21,18 @@ export const Card = styled.div`
     @media only screen and (max-width: 1070px) {
        width: 80%;
     }
+
     @media only screen and (max-width: 700px) {
-       width: 100%;
+        width: 328px;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        padding: 15px 0px;
+    }
+
+    
+    @media only screen and (max-width: 300px) {
+        width: 260px;
     }
 `;
 

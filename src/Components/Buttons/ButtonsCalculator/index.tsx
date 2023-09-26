@@ -4,7 +4,7 @@ import { Back, Buttons } from "./style";
 interface PropsAttributes {
     title?: string,
     onClick?: () => void,
-    width?: string
+    width?: string,
 }
 
 const ButtonCalculator: React.FC<PropsAttributes> = ({ title, onClick, width }) => {

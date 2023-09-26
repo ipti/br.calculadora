@@ -19,6 +19,11 @@ export const Question = styled.p`
     @media only screen and (max-width: 1100px) {
         font-size: 14px;          
     }
+    @media only screen and (max-width: 1070px) {
+        text-align: center;
+        margin-right: 1px;  
+        margin-top: 15px;       
+    }
 
       
 `;
