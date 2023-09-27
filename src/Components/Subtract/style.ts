@@ -69,6 +69,7 @@ export const Title = styled.div`
 export const CustomRow = styled.div`
   width: 100%;
   margin: 0 auto;
+  margin-left:15px;
 `;
 
 export const TitleSmall = styled.div`
@@ -128,8 +129,12 @@ export const BackgroundBody = styled.div`
  
 
      @media only screen and (max-width: 600px) {
-        width: 100%;    
+        width: auto;    
         margin-right: 20px; 
+    
+    }
+    @media only screen and (max-width: 600px) {
+        margin-right: 5px;   
     
     }
 

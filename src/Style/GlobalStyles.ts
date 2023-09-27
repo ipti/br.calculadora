@@ -81,7 +81,7 @@ export const Column = styled.div`
     #center{
         justify-content: center;
         display: flex;
-        gap: 20px;
+        gap: 4px;
         @media only screen and (max-width: 550px) {
             gap: 0px;
           }
@@ -195,8 +195,9 @@ interface GridAttributes {
 export const Grid = styled.div<GridAttributes>`
     display: grid;
     column-gap: 10px;
-    padding: 20px;
+    padding: 27px;
     grid-template-areas: "CD CD CD";
+    margin-left: 75px;
 
     grid-template-columns: ${(props) =>
         props.checkMockup.length === 4 ? "repeat(4, 24.5%)" : props.checkMockup.length === 3 ? "repeat(3, 33%)" : props.checkMockup.length === 2 ? "repeat(2, 50%)" : "repeat(2, 50%)"};
@@ -205,20 +206,35 @@ export const Grid = styled.div<GridAttributes>`
         column-gap: 8px;
         grid-template-columns: ${(props) =>
         props.checkMockup ? "repeat(4, 23%)" : "repeat(1, 100%)"};
-            margin-top: -20px;
-            margin-left: 40px;
+            // margin-top: -20px;
+            margin-left: 100px;
+
     }
 
+    
     @media (max-width: 1100px) {
+        // column-gap: 16px;
+        // margin-left: -5px;
+    }
+
+
+    @media (max-width: 1070px) {
         grid-template-areas: "CD CD";
         grid-template-columns: ${(props) =>
         props.checkMockup ? "repeat(2, 50%)" : "repeat(1, 100%)"};
-    }
-    @media (max-width: 1100px) {
-        column-gap: 16px;
-        margin-left: -5px;
+        margin-left: 0px;
     }
 
+
+@media (max-width: 780px) {
+        grid-template-areas: "CD CD";
+        grid-template-columns: ${(props) =>
+        props.checkMockup ? "repeat(2, 58%)" : "repeat(1, 100%)"};
+    }
+
+    @media (max-width: 780px) {
+        
+    }
 
 
  
