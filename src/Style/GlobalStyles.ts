@@ -126,7 +126,7 @@ export const RowResponse = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 3px;
     flex-wrap: wrap;
 
@@ -171,7 +171,6 @@ export const Row = styled.div`
     #response {
         flex-direction: column;
     }
-
 `;
 
 interface PaddingAttributes {

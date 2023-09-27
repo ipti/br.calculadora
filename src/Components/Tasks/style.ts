@@ -35,6 +35,22 @@ export const CustomButton = styled.button`
     }
 `;
 
+export const TextName = styled.div`
+    display: flex;
+    align-items: center;
+    margin: auto;
+    height: 20px;
+    padding: 15px;
+    border-radius: 12px;
+    border: 3px solid #83C2E2;
+    background: var(--primary-gray-10, #FFF);
+    width: auto;
+    
+`;
+
+
+
+
 
 // export const Icon_pdf = styled.div`
 //     background: url(${iconPdf});

@@ -33,6 +33,7 @@ export const VectorLeft = styled.div`
     /* position: relative; */
     img {
         position: absolute;
+        margin-top: -100px;
     }
 `;
 
@@ -44,7 +45,11 @@ export const VectorTop = styled.div`
     margin-left: auto;
     img {
         position: absolute;
+        left: 90px;
+    top: 500px;
     }
+
+    
 `;
 
 export const VectorRight = styled.div`
@@ -56,5 +61,18 @@ export const VectorRight = styled.div`
     align-items: center;
     img {
         position: absolute;
+    }
+`;
+export const VectorBottom = styled.div`
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    img {
+        position: absolute;
+        top: 454px;
+        right: 50px;
     }
 `;

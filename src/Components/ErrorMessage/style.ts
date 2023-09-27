@@ -13,16 +13,19 @@ export const ErrorMessageContainer = styled.div<{ type?: "error" | "confirmation
     p {
       color: red;
       padding: 10px;
-      background-color: #f8d7da;
       border-color:#f5c6cb
       width: 100%;
       border-radius:3%;
       text-align: center;
       
 
-    //   @media only screen and (max-width: 1070px) {
-    //     margin-right: 70px;
-    //  }
+      @media only screen and (max-width: 1070px) {
+        margin-right: 70px;
+     }
+     
+     @media only screen and (max-width: 700px) {
+      text-align: center;
+   }
     }
   `}
 

@@ -14,7 +14,7 @@ import {
     Title,
     Title2,
 } from "./style";
-
+import { useLocation } from "react-router-dom";
 import ButtonCalculator from "../Buttons/ButtonsCalculator";
 import ButtonsNextProx from "../Buttons/ButtonsNextProx";
 
@@ -49,6 +49,9 @@ const Feedback: React.FC = () => {
 
     const nome_but = "Próximo Mundo";
     const navigate = useNavigate();
+
+    const location = useLocation();
+    const { nome } = location.state || {};
 
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
     const [messageType, setMessageType] = useState("error"); // Inicialize com "error" como valor padrão
@@ -212,19 +215,16 @@ const Feedback: React.FC = () => {
 
     const handleSubmit = () => {
         if (
-            questionTwentyFive !== undefined &&
+            questionTwentyFive !== undefined ||
             questionTwentySix !== undefined
         ) {
-            // alert("Enviando " + questionOne + ", " + questionTwo);
             setErrorMessage("Respostas enviadas com sucesso!");
             setMessageType("confirmation");
-            // navigate("/tasks");
-
 
             setTimeout(() => {
                 const questionsData = getAllQuestions();
-                navigate("/tasks", { state: { questions: questionsData } });
-            }, 3000); // 2000 milissegundos (2 segundos)
+                navigate("/tasks", { state: { nome, questions: questionsData } });
+            }, 2000); // 2000 milissegundos (2 segundos)
         } else {
             setMessageType("error");
             setErrorMessage("Por favor, preencha todos os campos antes de avançar.");
@@ -280,9 +280,8 @@ const Feedback: React.FC = () => {
 
     return (
         <Container>
-            {/* <Padding padding="32px" /> */}
             <Row style={{ justifyContent: "center" }}>
-                <Title>Autoavaliação</Title>
+                <Title>Autoavaliação </Title>
             </Row>
             <Padding padding="32px" />
             <Sheet>
@@ -319,11 +318,6 @@ const Feedback: React.FC = () => {
                                     })()}
                                 </Title>
                             </Row>
-                            {/* <Padding padding="16px" /> */}
-
-                            {/* <Activity questions={getAllQuestions()} /> */}
-
-
                             {step === 1 && (
                                 <>
                                     <Note
@@ -506,7 +500,6 @@ const Feedback: React.FC = () => {
 
                             <Row id="center">
 
-                                {/* <ErrorMessage errorMessage={errorMessage} type="error" /> */}
                                 <ErrorMessage errorMessage={errorMessage} type={messageType as "error" | "confirmation"} />
 
 

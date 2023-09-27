@@ -2,9 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom"; // Importe Route diretamente
 
-import Calculator from "../../Components/Calculator";
 import Layout from "../../Components/Layout";
-import Subtract from "../../Components/Subtract";
 import Tasks from "../../Components/Tasks";
 import Login from "../../Components/Login";
 import { Padding } from "../../Style/GlobalStyles";
@@ -23,10 +21,8 @@ const Homepage = () => {
                     <Route path="/" element={
                         <ContainerHome>
                             <Padding padding="16px" />
-                            <Grid>
-                                <Subtract />
-                                <Calculator />
-                            </Grid>
+                            <Login />
+
                         </ContainerHome>
                     } />
                     <Route path="/autoavaliacao" element={
@@ -39,12 +35,6 @@ const Homepage = () => {
                             <Tasks />
                         </ContainerHome>
                     } />
-                    <Route path="/login" element={
-                        <ContainerHome>
-                            <Login />
-                        </ContainerHome>
-                    } />
-
                     <Route path="*" element={ // Rota para "Not found" caso não exista nenhuma outra chamada
                         <ContainerHome>
                             <NotFound />

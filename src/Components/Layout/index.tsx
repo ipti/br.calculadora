@@ -5,7 +5,8 @@ import { Background, Container, Padding, Row } from "../../Style/GlobalStyles";
 import vectorLeft from "../../assets/images/vector-left.svg";
 import vectorTop from "../../assets/images/vector-top.svg";
 import vectorRight from "../../assets/images/vector-right.svg";
-import { VectorLeft, VectorRight, VectorTop, Stack } from "./style";
+import vectorBottom from "../../assets/images/ON_Padrão.svg";
+import { VectorLeft, VectorRight, VectorTop, Stack, VectorBottom } from "./style";
 
 interface Props {
     children: React.ReactNode;
@@ -46,9 +47,12 @@ const Layout = ({ children, set, value }: Props) => {
                 <VectorRight>
                     <img alt="" src={vectorRight} />
                 </VectorRight>
+                <VectorBottom>
+                    <img alt="" src={vectorBottom} />
+                </VectorBottom>
                 <Container>
                     <Padding padding="32px 12px">
-                        <Row id="space-between">
+                        {/* <Row id="space-between">
                             <>
                                 <Link to="/">
                                     <Button
@@ -65,7 +69,7 @@ const Layout = ({ children, set, value }: Props) => {
                                     />
                                 </Link>
                             </>
-                        </Row>
+                        </Row> */}
                         {children}
                     </Padding>
                 </Container>

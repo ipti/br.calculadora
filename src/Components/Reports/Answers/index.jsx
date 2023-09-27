@@ -4,7 +4,10 @@ import pdfFonts from 'pdfmake/build/vfs_fonts';
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 const AnswersPDF = {
-    renderHelloWorld: (questions) => {
+    renderHelloWorld: ({ nome, dados }) => {
+        console.log("recebdo aqui em Answers", nome);
+
+        console.log("recendoo aqui em Answers", dados);
 
         const reportTitle = [
             {
@@ -14,29 +17,12 @@ const AnswersPDF = {
                 alignment: 'center',
                 margin: [15, 20, 20, 45], // left, top, right, bottom
             },
+            
         ];
 
-        // const reportDetails = [];
+        const reportDetails = [{text: `Nome: ${nome}`, fontSize: 15, margin: [45, 50, 45, 50], bold: true}];
 
-        // for (const mundo in questions) {
-        //     if (questions.hasOwnProperty(mundo)) {
-        //         const respostas = questions[mundo];
-        //         reportDetails.push(
-        //             { text: `\n\n${mundo}`, style: 'header', fontSize: 15, margin: [45, 10, 45, 8], bold: true },
-        //             {
-        //                 ol: respostas.map((resposta) => `Resposta: ${resposta}`),
-        //                 fontSize: 15,
-        //                 margin: [45, 10, 10, 8],
-        //             }
-        //         );
-        //     }
-        // }
-
-
-
-        const reportDetails = [];
-
-        questions.forEach(item => {
+        dados.forEach(item => {
             const { category, activities, result } = item;
 
             const orderedList = activities.map(activity => `Item: ${activity}`);
@@ -99,15 +85,19 @@ const AnswersPDF = {
             ];
         }
 
-        const docDefinitions = {
-            pageSize: 'A4',
-            pageMargins: [15, 50, 15, 40],
-            header: [reportTitle],
-            content: reportDetails,
-            footer: Rodape,
-        };
+            const docDefinitions = {
+                pageSize: 'A4',
+                pageMargins: [15, 50, 15, 40],
+                header: [reportTitle],
+                content: reportDetails,
+                footer: Rodape,
+            };
 
-        pdfMake.createPdf(docDefinitions).download();
+
+        const pdfDoc = pdfMake.createPdf(docDefinitions);
+                pdfDoc.download(nome + '.pdf');
+
+
     },
 
 
