@@ -67,7 +67,7 @@ const Subtract = () => {
                                     <Row id="center">
                                         <Input value={totais} text="Custos Totais (CT)" />
                                         <Column id="center">
-                                            <IconPlus color="#475DA7">+</IconPlus>
+                                            <IconPlus color="#475DA7">x</IconPlus>
                                         </Column>
                                         <Input value={0.3} text="0,3 (30% de lucro)" />
                                         <Column id="center">
