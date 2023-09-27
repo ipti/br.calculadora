@@ -1,7 +1,8 @@
 import { styled } from "styled-components";
 import backgroundBody from "../../assets/images/SubtractBody.png";
 import backgroundBodyDown from "../../assets/images/SubtractParte2.png";
-import backgroundRespons from "../../assets/images/backgroundRespons.png";
+import backgroundRespons from "../../assets/images/Group 58 (1).png";
+import linha from "../../assets/images/linha.png";
 import rows from "../../assets/images/rows.png";
 
 
@@ -115,6 +116,7 @@ export const BackgroundBody = styled.div`
     background-size: 100%;
     background-repeat: no-repeat;
     object-fit: cover;
+    position: relative;
 
     @media only screen and (max-width:  1222px) {
         height: auto;
@@ -125,6 +127,29 @@ export const BackgroundBody = styled.div`
        @media only screen and (max-width: 1070px) {
        background: #f8fae4;
        width: auto;
+
+
+       &::before {
+        content: url(${backgroundRespons});
+        position: absolute;
+        top: 10px;
+        left: 36px;
+        width: 100px;
+        height: 100px;
+        
+        }
+
+        &::after {
+            content: url(${linha});
+            position: absolute;
+    top: 43px;
+    left: -17px;
+    width: 100px;
+    height: 100px;
+            
+            }
+
+
     }
  
 
@@ -140,8 +165,19 @@ export const BackgroundBody = styled.div`
 
 `;
 
+
+export const BeforeBall = styled.div`
+ content: url(${backgroundRespons});
+ position: relative;
+ top: 80px;
+ left: 43px;
+ width: 100px;
+ height: 100px;
+ `;
+
 export const BackgroundBodyDown = styled.div`
     border-radius: 49px;
+    position: relative;
     background: url(${backgroundBodyDown});
     background-size: 100%;
     height: auto;
@@ -153,6 +189,28 @@ export const BackgroundBodyDown = styled.div`
     @media only screen and (max-width: 1070px) {
        background: #f8fae4;
        width: auto;
+
+
+       &::before {
+        content: url(${backgroundRespons});
+        position: absolute;
+        top: 10px;
+        left: 36px;
+        width: 100px;
+        height: 100px;
+        
+        }
+
+
+        &::after {
+            content: url(${linha});
+            position: absolute;
+    top: 43px;
+    left: -17px;
+    width: 100px;
+    height: 100px;
+            
+            }
     }
 
     @media only screen and (max-width: 600px) {
@@ -187,6 +245,7 @@ export const Rows = styled.div`
 export const Container = styled.div`
     height: auto;
     width: 70%;
+    
     @media only screen and (max-width: 1070px) {
       width: 100%;
     }
