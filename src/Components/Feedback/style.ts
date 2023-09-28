@@ -4,6 +4,9 @@ import backgroundLogin from "../../assets/images/SubtractLogin.png";
 import styles from "../../Style";
 import frontImg from "../../assets/images/SubtractTop.png"
 
+import backgroundRespons from "../../assets/images/Group 58 (1).png";
+import linha from "../../assets/images/linha.png";
+
 export const Sheet = styled.div`
     border-radius: 49px;
     background: url(${backgroundBody2});
@@ -13,11 +16,35 @@ export const Sheet = styled.div`
     width: 70%;
     background-size: 100%;
     object-fit: cover;
+    position: relative;
 
     @media only screen and (max-width: 1070px) {
        background: #f8fae4;
        width: 100%;
+
+
+       &::before {
+        content: url(${backgroundRespons});
+        position: absolute;
+        top: 10px;
+        left: 36px;
+        width: 100px;
+        height: 100px;
+        
+        }
+
+        &::after {
+            content: url(${linha});
+            position: absolute;
+    top: 43px;
+    left: -17px;
+    width: 100px;
+    height: 100px;
+            
+            }
     }
+
+
 `;
 
 
